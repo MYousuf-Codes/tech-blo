@@ -27,8 +27,8 @@ export default function Home() {
           that can inspire and inform you.
         </p>
         <p className="text-md md:text-lg text-center text-gray-300 max-w-lg">
-          Whether you’re looking for the latest tech trends, lifestyle tips, or
-          engaging stories, you’ve come to the right place. Happy reading!
+          Whether you&apos;re looking for the latest tech trends, lifestyle tips, or
+          engaging stories, you&apos;ve come to the right place. Happy reading!
         </p>
       </main>
     </>
