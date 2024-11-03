@@ -15,7 +15,8 @@ export default function Home() {
           <div className="absolute w-20 h-20 bg-green-500 opacity-30 rounded-full blur-2xl bottom-1/4 left-1/3 animate-pulse" />
         </div>
 
-        <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Welcome to My Tech Blog!</h1>
+        <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
+          {`Welcome to My Tech Blog!`}</h1>
         <p className="text-lg md:text-xl text-center max-w-2xl mb-6">
           {`Discover insights and stories about technology, lifestyle, and more. Join us as we explore various topics and share valuable information that can inspire and inform you.`}
         </p>
