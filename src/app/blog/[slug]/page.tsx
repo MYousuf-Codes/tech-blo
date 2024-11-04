@@ -1,10 +1,15 @@
 // src/app/blog/[slug]/page.tsx
 "use client";
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { FC } from 'react';
 import Image from 'next/image';
+import CommentSection from '@/components/CommentSection';
+import Button from '@/components/Button';
+import Link from 'next/link';
 
 interface Post {
+  id : number;
   slug: string;
   imageUrl: string;
   title: string;
@@ -16,9 +21,16 @@ const BlogPost: FC = () => {
   const router = useRouter();
   const slug = params.slug as string;
 
+  useEffect(() => {
+    if (!slug) {
+      router.push('/404'); // Redirect to a 404 page if slug is not found
+    }
+  }, [slug, router]);
   {/* To add blogs dynamically */ }
+
   const posts: Post[] = [
     {
+      id : 1,
       slug: 'exploring-latest-technology',
       imageUrl: '/post-1.jpg',
       title: 'The Future of Technology: What to Expect in 2024',
@@ -117,6 +129,7 @@ const BlogPost: FC = () => {
       `
     }, 
     {
+      id : 2,
       slug: "front-end-to-headless-cms",
       title: "My Front-End Journey: HTML to Headless CMS",
       imageUrl: "/post-2.jpeg",
@@ -142,6 +155,7 @@ const BlogPost: FC = () => {
         </div>`
     },
     {
+      id : 3,
       slug: "web-development-best-practices-2024",
       title: "Web Development Best Practices for 2024",
       imageUrl: "/post-3.jpg",
@@ -166,10 +180,19 @@ const BlogPost: FC = () => {
 
   ];
 
-  const post = posts.find((p) => p.slug === slug);
+  const post = posts.find((post) => post.slug === slug);
+
 
   if (!post) {
     return <p className="text-center mt-10">Post not found</p>;
+  }
+
+  if (!post) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 mt-10">
+        <p>Post not found. Please check the URL or go back to the homepage.</p>
+      </div>
+    );
   }
 
   return (
@@ -183,12 +206,11 @@ const BlogPost: FC = () => {
           height={450}
           className="object-cover w-full h-96 mb-6 rounded-lg"
         />
-        <div className="text-lg leading-relaxed text-black" dangerouslySetInnerHTML={{ __html: post.content }} />        <button
-          onClick={() => router.push('/blog')}
-          className="bg-blue-500 text-white py-2 px-6 hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 rounded mt-6"
-        >
-          Back to Blog
-        </button>
+        <div className="text-lg leading-relaxed text-black" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <CommentSection />        
+        <Link href={"/blog"}>
+        <Button  buttonText='Back to Post'/>
+        </Link>
       </div>
     </main>
   );

@@ -1,10 +1,8 @@
-// src/app/blog/page.tsx
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import Button from '@/components/Button';
 
-const Blog = () => {
+const RecentPosts = () => {
   const posts = [
     {
       slug: 'exploring-latest-technology',
@@ -29,7 +27,7 @@ const Blog = () => {
   return (
     <>
       <Head>
-        <title>Blog Posts</title>
+        <title>Recent Blog Posts</title>
         <meta name="description" content="Latest blog posts on technology, lifestyle, and more!" />
       </Head>
       <main className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white p-6">
@@ -40,7 +38,7 @@ const Blog = () => {
           <div className="absolute w-20 h-20 bg-green-500 opacity-30 rounded-full blur-2xl bottom-1/4 left-1/3 animate-pulse" />
         </div>
 
-        <h1 className="text-4xl font-bold text-center mb-10">Blog Posts</h1>
+        <h1 className="text-4xl font-bold text-left mb-10">Recent Blog Posts</h1>
         <div className="max-w-6xl mx-auto p-6 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {posts.map((post) => (
@@ -56,9 +54,9 @@ const Blog = () => {
                   <div className="p-4">
                     <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
                     <p className=" ">{post.description} ...</p>
-                    
-                    <Button buttonText='Read More'/>
-
+                    <button className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+                      Read More
+                    </button>
                   </div>
                 </Link>
               </div>
@@ -70,4 +68,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default RecentPosts;
