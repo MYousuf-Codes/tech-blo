@@ -7,7 +7,7 @@ const Blog = () => {
   const posts = [
     {
       slug: 'exploring-latest-technology',
-      title: 'Web Development Best Practices for 2024',
+      title: 'The Future of Technology: What to Expect in 2024',
       description: 'Technology is evolving at a breakneck speed, influencing nearly every',
       imageUrl: '/post-1.jpg',
     },
