@@ -47,7 +47,7 @@ export default function About() {
                         who share a passion for innovation and building exceptional digital products. 🌟
                         <br /><br />
                         If you are looking for a front-end developer to create visually appealing
-                        websites or interfaces, let&apos;s work together to bring your ideas to life! 🚀
+                        websites or interfaces, let&apos;s work together to bring your ideas to life!🚀
                     </p>
                 </div>
             </div>
