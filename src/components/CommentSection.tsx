@@ -1,6 +1,5 @@
 // src/components/CommentSection.tsx
 import React, { useState } from 'react';
-import Button from '@/components/Button';
 
 interface Comment {
   text: string;
