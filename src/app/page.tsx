@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -31,9 +32,9 @@ export default function Home() {
           Whether you&apos;re looking for the latest tech trends, lifestyle tips, or
           engaging stories, you&apos;ve come to the right place. Happy reading!
         </p>
-
+        <Link href={"/blog"}>
         <Button buttonText="View All Posts"/>
-
+        </Link>
         <section>
           {/* <RecentPosts /> */}
         </section>
